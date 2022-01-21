@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     PaintView myPaintView;
     PaintView pV;
 
+    GraphicsView testGraphics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,9 +30,10 @@ public class MainActivity extends AppCompatActivity {
         myCurveView = new MyCurveView(this);
         myText = new NewText(this);
         myPaintView = new PaintView(this);
+        testGraphics = new GraphicsView(this);
 
         layout = findViewById(R.id.layout);
-        layout.addView(myPaintView);
+        layout.addView(testGraphics);
 
     }
 
@@ -44,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             //create Path object
             myArc = new Path();
             //create RectF Object
-            RectF oval = new RectF(50,100,200,250);
+            RectF oval = new RectF(50, 100, 200, 250);
             //add Arc in Path with start angle -180 and sweep angle 200
             myArc.addArc(oval, -180, 200);
             //create paint object
